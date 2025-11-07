@@ -76,6 +76,3 @@ Jump across spooky blocks, avoid roaming ghosts, and race against time to fill y
 - Managing **scene transitions**, **respawn logic**, and **game states**.
 
 ---
-
-## Project Structure
-
