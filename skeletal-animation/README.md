@@ -24,12 +24,6 @@ This project was created for my 2D Animation module and demonstrates the use of 
 - Walk cycle is at least one second in length  
 - Fully working Godot 4 project included in this repository
 
----
-
-## Controls
-
-Spacebar – Switch between Idle and Walk animations  
-(If your input is different, update this section.)
 
 ---
 
