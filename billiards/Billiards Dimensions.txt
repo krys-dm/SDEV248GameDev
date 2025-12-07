@@ -1,0 +1,21 @@
+
+Pool Balls
+	0.0285 meter radius
+	0.160-0.170 kilogram mass
+
+Pool Cue
+	1.44-1.50 meters long
+	0.012-0.013 meter tip
+	0.510-0.595 kilogram mass
+
+Pool Table
+	exactly twice as long as it is wide
+	7 foot 
+	8 foot (most common home size)
+	9 foot (standard/tournament)
+		9x4.5 ft (2.74x1.37 meters)
+	10 foot (oversized)
+	
+
+Pocket
+	0.114-0.127 meter diameter
