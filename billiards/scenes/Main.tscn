@@ -1,0 +1,102 @@
+[gd_scene load_steps=21 format=3 uid="uid://xxyrxcjgj3fy"]
+
+[ext_resource type="Script" uid="uid://crd0hwghcodki" path="res://scenes/Main.gd" id="1_vcsgt"]
+[ext_resource type="PackedScene" uid="uid://cy7hobfns2dcy" path="res://scenes/CueBall.tscn" id="2_c01mt"]
+[ext_resource type="PackedScene" uid="uid://4fdc35pxy8ey" path="res://scenes/PoolTable.tscn" id="3_nxtc6"]
+[ext_resource type="Script" uid="uid://2hr8kh6q04rw" path="res://scenes/CueRoot.gd" id="4_jlsqs"]
+[ext_resource type="PackedScene" uid="uid://drw3mupuy7v4m" path="res://scenes/Cue.tscn" id="5_q8u5g"]
+[ext_resource type="PackedScene" uid="uid://cturj428t61ee" path="res://models/yellowstripeball.blend" id="6_1nqs0"]
+[ext_resource type="PackedScene" uid="uid://cte2mw8jd23dg" path="res://models/yellowball.blend" id="7_1iba3"]
+[ext_resource type="PackedScene" uid="uid://5004xgwtl64w" path="res://models/redstripeball.blend" id="8_yxlcp"]
+[ext_resource type="PackedScene" uid="uid://7hv88dw07mj8" path="res://models/redball.blend" id="9_ebg2g"]
+[ext_resource type="PackedScene" uid="uid://dwnr6km0hbo2l" path="res://models/purplestripeball.blend" id="10_2ofn6"]
+[ext_resource type="PackedScene" uid="uid://b25kp2rr2jvie" path="res://models/purpleball.blend" id="11_xa025"]
+[ext_resource type="PackedScene" uid="uid://dh5mlcyh14v" path="res://models/orangestripeball.blend" id="12_36rkl"]
+[ext_resource type="PackedScene" uid="uid://cfhxp1d4s1xob" path="res://models/orangeball.blend" id="13_fs0b5"]
+[ext_resource type="PackedScene" uid="uid://chakicn070dr6" path="res://models/maroonstripeball.blend" id="14_ma7h6"]
+[ext_resource type="PackedScene" uid="uid://spe2k7xpghfd" path="res://models/maroonball.blend" id="15_e2s0e"]
+[ext_resource type="PackedScene" uid="uid://66lkx116tvg4" path="res://models/greenstripeball.blend" id="16_gsxep"]
+[ext_resource type="PackedScene" uid="uid://chpnvbwesxpcj" path="res://models/bluestripedball.blend" id="17_v0vrg"]
+[ext_resource type="PackedScene" uid="uid://drplawmvqys7o" path="res://models/blueball.blend" id="18_dg70y"]
+[ext_resource type="PackedScene" uid="uid://b42f3ast1ytuo" path="res://models/8ball.blend" id="19_pnhog"]
+[ext_resource type="PackedScene" uid="uid://did1tycynfwje" path="res://models/greenball.blend" id="20_2c4at"]
+
+[node name="Main" type="Node3D" node_paths=PackedStringArray("cue_root", "cue_ball_spawn")]
+script = ExtResource("1_vcsgt")
+cue_root = NodePath("CueRoot")
+cue_ball_scene = ExtResource("2_c01mt")
+cue_ball_spawn = NodePath("CueBallSpawn")
+
+[node name="Table" parent="." instance=ExtResource("3_nxtc6")]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0.012990952, 0, 0)
+
+[node name="CueRoot" type="Node3D" parent="." node_paths=PackedStringArray("cue_body", "cue_ball")]
+script = ExtResource("4_jlsqs")
+cue_body = NodePath("CueRoot/Cue")
+cue_ball = NodePath("")
+
+[node name="CueRoot" parent="CueRoot" instance=ExtResource("5_q8u5g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.36211348, -13.781922)
+
+[node name="Balls" type="Node3D" parent="."]
+
+[node name="yellowstripeball" parent="Balls" instance=ExtResource("6_1nqs0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8009634, 0.43611097, 8.050732)
+
+[node name="yellowball" parent="Balls" instance=ExtResource("7_1iba3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03972149, 0.43834913, 6.53052)
+
+[node name="redstripeball" parent="Balls" instance=ExtResource("8_yxlcp")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23365986, 0.41944838, 7.0285974)
+
+[node name="redball" parent="Balls" instance=ExtResource("9_ebg2g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2203312, 0.4081061, 8.530678)
+
+[node name="purplestripeball" parent="Balls" instance=ExtResource("10_2ofn6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2218628, 0.39199603, 8.031612)
+
+[node name="purpleball" parent="Balls" instance=ExtResource("11_xa025")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.36581016, 0.375453, 8.031652)
+
+[node name="orangestripeball" parent="Balls" instance=ExtResource("12_36rkl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.64051986, 0.4227512, 8.534066)
+
+[node name="orangeball" parent="Balls" instance=ExtResource("13_fs0b5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.6356189, 0.40715706, 7.518811)
+
+[node name="maroonstripeball" parent="Balls" instance=ExtResource("14_ma7h6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.50507784, 0.4116428, 8.557326)
+
+[node name="maroonball" parent="Balls" instance=ExtResource("15_e2s0e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07132149, 0.37918997, 8.547861)
+
+[node name="greenstripeball" parent="Balls" instance=ExtResource("16_gsxep")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3325703, 0.39586043, 7.0241327)
+
+[node name="bluestripedball" parent="Balls" instance=ExtResource("17_v0vrg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93205583, 0.39895058, 8.03675)
+
+[node name="blueball" parent="Balls" instance=ExtResource("18_dg70y")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0544531, 0.43122292, 8.541408)
+
+[node name="8ball" parent="Balls" instance=ExtResource("19_pnhog")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07761991, 0.4051013, 7.538466)
+
+[node name="greenball" parent="Balls" instance=ExtResource("20_2c4at")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, -0.5013373, 0.4320873, 7.528713)
+
+[node name="CueBallSpawn" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.20500636, -6.663859)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-1, 5.454129e-08, -6.832269e-08, 0, 0.7815205, 0.6238796, 8.742278e-08, 0.6238796, -0.7815205, 0.44075346, 10.48297, -19.719357)
+current = true
+fov = 103.070015
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -0.44775915, 0.8941542, 0, -0.8941542, -0.44775915, 0, 2.1439133, 0)
+light_color = Color(1, 1, 0.64705884, 1)
+light_energy = 1.154
+
+[editable path="CueRoot/CueRoot"]
+[editable path="CueRoot/CueRoot/Cue/cuestick"]

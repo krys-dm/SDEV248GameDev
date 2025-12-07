@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://dae4s6djn1ft3"]
+
+[ext_resource type="PackedScene" uid="uid://dh5mlcyh14v" path="res://models/orangestripeball.blend" id="1_y5q76"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cxlvu"]
+friction = 0.5
+bounce = 0.6
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_f7cbr"]
+radius = 0.29052347
+
+[node name="orangestripeball" type="RigidBody3D" groups=["ball"]]
+mass = 0.17
+physics_material_override = SubResource("PhysicsMaterial_cxlvu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_f7cbr")
+
+[node name="orangestripeball" parent="." instance=ExtResource("1_y5q76")]

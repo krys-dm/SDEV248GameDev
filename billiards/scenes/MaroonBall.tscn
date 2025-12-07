@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://gp54tsvtauxp"]
+
+[ext_resource type="PackedScene" uid="uid://spe2k7xpghfd" path="res://models/maroonball.blend" id="1_g1iba"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cxlvu"]
+friction = 0.5
+bounce = 0.6
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_f7cbr"]
+radius = 0.29052347
+
+[node name="maroonball" type="RigidBody3D" groups=["ball"]]
+mass = 0.17
+physics_material_override = SubResource("PhysicsMaterial_cxlvu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_f7cbr")
+
+[node name="maroonball" parent="." instance=ExtResource("1_g1iba")]

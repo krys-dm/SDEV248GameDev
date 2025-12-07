@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://drw3mupuy7v4m"]
+
+[ext_resource type="PackedScene" uid="uid://bkhklht1slbk0" path="res://models/cuestick.blend" id="1_2bmmc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ex6xp"]
+friction = 0.4
+bounce = 0.2
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2bmmc"]
+radius = 0.013183594
+height = 1.269928
+
+[node name="CueRoot" type="Node3D"]
+
+[node name="Cue" type="RigidBody3D" parent="."]
+mass = 0.51
+physics_material_override = SubResource("PhysicsMaterial_ex6xp")
+gravity_scale = 0.0
+
+[node name="cuestick" parent="Cue" instance=ExtResource("1_2bmmc")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Cue"]
+transform = Transform3D(0.1, 0, 0, 0, -4.3711395e-09, -0.1, 0, 0.1, -4.3711395e-09, 0.00016960483, 1.8708246e-06, 0.00094043015)
+shape = SubResource("CapsuleShape3D_2bmmc")
+
+[editable path="Cue/cuestick"]

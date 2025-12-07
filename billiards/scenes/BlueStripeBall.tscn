@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkavnnq1ue3be"]
+
+[ext_resource type="PackedScene" uid="uid://chpnvbwesxpcj" path="res://models/bluestripedball.blend" id="1_5qve0"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cxlvu"]
+friction = 0.5
+bounce = 0.6
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_f7cbr"]
+radius = 0.29052347
+
+[node name="bluestripeball" type="RigidBody3D" groups=["ball"]]
+mass = 0.17
+physics_material_override = SubResource("PhysicsMaterial_cxlvu")
+
+[node name="bluestripedball" parent="." groups=["ball"] instance=ExtResource("1_5qve0")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_f7cbr")

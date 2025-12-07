@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://4fdc35pxy8ey"]
+
+[ext_resource type="PackedScene" uid="uid://y5lfydylqg7k" path="res://models/pooltable.blend" id="1_kmxdn"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_18skb"]
+friction = 0.7
+bounce = 0.2
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kmxdn"]
+size = Vector3(13.470054, 1.5556886, 26.074036)
+
+[node name="PoolTable" type="StaticBody3D"]
+transform = Transform3D(8, 0, 0, 0, 8, 0, 0, 0, 8, 0, 0, 0)
+disable_mode = 1
+physics_material_override = SubResource("PhysicsMaterial_18skb")
+
+[node name="pooltable" parent="." instance=ExtResource("1_kmxdn")]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-0.1, 0, 0, 0, -0.1, 0, 0, 0, -0.1, 0.0030071437, -0.050413527, -0.0043899417)
+shape = SubResource("BoxShape3D_kmxdn")
+
+[editable path="pooltable"]

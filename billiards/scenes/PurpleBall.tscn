@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bts50fm0xqf2j"]
+
+[ext_resource type="PackedScene" uid="uid://b25kp2rr2jvie" path="res://models/purpleball.blend" id="1_prewb"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_cxlvu"]
+friction = 0.5
+bounce = 0.6
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_f7cbr"]
+radius = 0.29052347
+
+[node name="purpleball" type="RigidBody3D" groups=["ball"]]
+mass = 0.17
+physics_material_override = SubResource("PhysicsMaterial_cxlvu")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_f7cbr")
+
+[node name="purpleball" parent="." instance=ExtResource("1_prewb")]
